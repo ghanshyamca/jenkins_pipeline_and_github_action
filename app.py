@@ -99,16 +99,24 @@ def info():
     }), 200
 
 
-@app.route('/api/add/<int:num1>/<int:num2>')
+@app.route('/api/add/<num1>/<num2>')
 def add_numbers(num1, num2):
     """Add two numbers and return the result"""
-    result = num1 + num2
-    return jsonify({
-        'num1': num1,
-        'num2': num2,
-        'result': result,
-        'operation': 'addition'
-    }), 200
+    try:
+        num1 = int(num1)
+        num2 = int(num2)
+        result = num1 + num2
+        return jsonify({
+            'num1': num1,
+            'num2': num2,
+            'result': result,
+            'operation': 'addition'
+        }), 200
+    except ValueError:
+        return jsonify({
+            'error': 'Invalid input',
+            'message': 'Both parameters must be valid integers'
+        }), 400
 
 
 @app.errorhandler(404)

@@ -98,7 +98,10 @@ def test_invalid_endpoint(client):
 def test_add_non_integer(client):
     """Test adding with non-integer values"""
     response = client.get('/api/add/abc/def')
-    assert response.status_code == 404  # Route won't match
+    assert response.status_code == 400
+    
+    data = json.loads(response.data)
+    assert 'error' in data
 
 
 def test_health_check_returns_json(client):
