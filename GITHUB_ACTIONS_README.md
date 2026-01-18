@@ -151,8 +151,7 @@ Go to: **Repository → Settings → Secrets and variables → Actions**
 
 Add these **14 secrets**:
 
-<details>
-<summary><b>📂 Deployment Secrets (8)</b></summary>
+📂 Deployment Secrets (8)
 
 **Staging:**
 ```
