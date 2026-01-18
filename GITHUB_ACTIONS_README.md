@@ -192,6 +192,31 @@ git push origin staging
 <img width="1515" height="558" alt="image" src="https://github.com/user-attachments/assets/a0180435-acb3-4d7f-9836-a6bc90910166" />
 
 
+### Step 4: Push Code to Production
+
+```bash
+# Initial setup
+git tag -a v1.1.0 -m "Release v1.1.0"
+git push origin v1.1.0
+```
+
+### Step 5: View Workflow
+
+1. Go to **Actions** tab in GitHub
+2. See workflow running in real-time
+3. View logs for each job
+4. Check email for notifications
+5. Also it will create Release for the same
+
+---
+
+<img width="1920" height="1953" alt="image" src="https://github.com/user-attachments/assets/de0364ca-0b4e-4aeb-b43a-3e134bc7e835" />
+
+<img width="1351" height="492" alt="image" src="https://github.com/user-attachments/assets/20d9bd22-3b1a-4cc9-9deb-37cd704f8c70" />
+
+<img width="1920" height="1769" alt="image" src="https://github.com/user-attachments/assets/3388ed5d-99f7-46c2-bd15-61c0ee7b0ecf" />
+
+
 
 ## 🔧 Workflow Jobs
 
