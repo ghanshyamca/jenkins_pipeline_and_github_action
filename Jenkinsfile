@@ -178,10 +178,10 @@ pipeline {
                     if (isUnix()) {
                         sh '''
                             tar -czf flask-app-${BUILD_NUMBER}.tar.gz \
-                                app.py requirements.txt \
                                 --exclude=${VIRTUAL_ENV} \
                                 --exclude=*.pyc \
-                                --exclude=__pycache__
+                                --exclude=__pycache__ \
+                                app.py requirements.txt
                         '''
                     } else {
                         bat '''
