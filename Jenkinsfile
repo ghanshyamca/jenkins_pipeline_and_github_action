@@ -20,7 +20,7 @@ pipeline {
         PRODUCTION_DEPLOY_PATH = '/var/www/flask-app'
         
         // Email configuration
-        EMAIL_RECIPIENTS = 'your-email@example.com'     // Update with your email
+        EMAIL_RECIPIENTS = 'ghanshyamjobi+jenkins@gmail.com'     // Update with your email
     }
     
     stages {
