@@ -2,24 +2,6 @@
 
 Complete CI/CD workflow for automated testing, building, and deployment of Flask application using GitHub Actions.
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Workflow Architecture](#workflow-architecture)
-- [Prerequisites](#prerequisites)
-- [Quick Start](#quick-start)
-- [Workflow Jobs](#workflow-jobs)
-- [Configuration](#configuration)
-- [Deployment](#deployment)
-- [Email Notifications](#email-notifications)
-- [Triggering the Pipeline](#triggering-the-pipeline)
-- [Secrets Configuration](#secrets-configuration)
-- [Artifacts](#artifacts)
-- [Troubleshooting](#troubleshooting)
-
----
-
 ## 🎯 Overview
 
 This GitHub Actions workflow automates the entire software delivery process:
