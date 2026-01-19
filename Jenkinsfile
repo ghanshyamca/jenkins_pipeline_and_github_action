@@ -245,7 +245,10 @@ pipeline {
         
         stage('Deploy to Production') {
             when {
-                tag pattern: "v\\d+\\.\\d+\\.\\d+", comparator: "REGEXP"
+                anyOf {
+                    tag pattern: "v\\d+\\.\\d+\\.\\d+", comparator: "REGEXP"
+                    branch 'main'
+                }
             }
             steps {
                 echo 'Deploying to production environment...'
@@ -325,7 +328,10 @@ pipeline {
         
         stage('Health Check - Production') {
             when {
-                tag pattern: "v\\d+\\.\\d+\\.\\d+", comparator: "REGEXP"
+                anyOf {
+                    tag pattern: "v\\d+\\.\\d+\\.\\d+", comparator: "REGEXP"
+                    branch 'production'
+                }
             }
             steps {
                 echo 'Running health checks on production...'
