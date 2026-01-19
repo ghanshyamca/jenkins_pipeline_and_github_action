@@ -330,656 +330,2112 @@ MIIEpAIBAAKCAQEA...
 
 <img width="1210" height="770" alt="image" src="https://github.com/user-attachments/assets/f80c4ba7-9cef-4925-a179-570b50657ce2" />
 
-## 🔧 Pipeline Stages
+## setup ngrok in ubuntu
 
-### Stage 1: Checkout
+<img width="1083" height="473" alt="image" src="https://github.com/user-attachments/assets/23f33ae1-8529-4ef3-87a0-73dd5a0c6fd0" />
 
-**Purpose**: Clone the Git repository
+## Github webhook setup
 
-```groovy
-stage('Checkout') {
-    steps {
-        echo 'Checking out source code...'
-        checkout scm
-    }
-}
+<img width="1920" height="1399" alt="image" src="https://github.com/user-attachments/assets/8516001b-a830-45d4-9a6b-88ea95782598" />
+
+## Github webhooks successfull
+
+<img width="1920" height="6922" alt="image" src="https://github.com/user-attachments/assets/c70a76cb-57d4-4af6-bf32-836d121a52ea" />
+
+## 🔧 Jenkins Pipeline Stages
+
+### Stage 1: configure pipeline
+
+<img width="1204" height="760" alt="image" src="https://github.com/user-attachments/assets/f9ea4772-3275-441f-9501-d5830dc26b68" />
+
+<img width="1207" height="771" alt="image" src="https://github.com/user-attachments/assets/aaee7887-d3e3-4439-8465-952cdf99a53b" />
+
+<img width="1194" height="773" alt="image" src="https://github.com/user-attachments/assets/a961a2e1-4860-4edc-a4ce-425044ce51b8" />
+
+<img width="1209" height="777" alt="image" src="https://github.com/user-attachments/assets/d7ae7d0f-7ac2-48e5-b2c0-5e98b10d832b" />
+
+### Stage 2: Push code staging branch
+
+<img width="1920" height="1999" alt="image" src="https://github.com/user-attachments/assets/2b5fc711-6e92-44da-95ab-b62529728258" />
+
+### Stage 3. Github Webhooks trigger
+
+<img width="1920" height="6922" alt="image" src="https://github.com/user-attachments/assets/16317eb5-3d55-47fa-b6f2-d478c0a0accb" />
+
+<img width="1206" height="765" alt="image" src="https://github.com/user-attachments/assets/cf5131d6-6507-47be-a1bf-b2eff9f53e58" />
+
+### Stage 4. CI/CD logs
+
+```
+Started by user admin
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/caches/git-640a1658cad41f253def4865ccabb7b3/.git # timeout=10
+Setting origin to https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git config remote.origin.url https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git # timeout=10
+Fetching origin...
+Fetching upstream changes from origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git config --get remote.origin.url # timeout=10
+ > git fetch --no-tags --force --progress -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/feature/changes
+Seen branch in repository origin/main
+Seen branch in repository origin/revert-4-feature/changes
+Seen branch in repository origin/staging
+Seen 4 remote branches
+Obtained Jenkinsfile from f725c1df22493fef0e38bc2f7f441b876bafd67a
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning with configured refspecs honoured and without tags
+Cloning repository https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git init /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging # timeout=10
+Fetching upstream changes from https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --no-tags --force --progress -- https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+Checking out Revision f725c1df22493fef0e38bc2f7f441b876bafd67a (staging)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f725c1df22493fef0e38bc2f7f441b876bafd67a # timeout=10
+Commit message: "Merge pull request #6 from ghanshyamca/feature/changes"
+ > git rev-list --no-walk f725c1df22493fef0e38bc2f7f441b876bafd67a # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withCredentials
+Masking supported pattern matches of $PRODUCTION_HOST or $PRODUCTION_USER or $STAGING_USER or $STAGING_HOST
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] echo
+Checking out source code...
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --no-tags --force --progress -- https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision f725c1df22493fef0e38bc2f7f441b876bafd67a (staging)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f725c1df22493fef0e38bc2f7f441b876bafd67a # timeout=10
+Commit message: "Merge pull request #6 from ghanshyamca/feature/changes"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Setup Environment)
+[Pipeline] echo
+Setting up Python virtual environment...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ python3 -m venv venv
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.10/site-packages (22.0.2)
+Collecting pip
+  Using cached pip-25.3-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.2
+    Uninstalling pip-22.0.2:
+      Successfully uninstalled pip-22.0.2
+Successfully installed pip-25.3
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] echo
+Installing dependencies...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install -r requirements.txt
+Collecting Flask==3.0.0 (from -r requirements.txt (line 2))
+  Using cached flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting Werkzeug==3.0.1 (from -r requirements.txt (line 3))
+  Using cached werkzeug-3.0.1-py3-none-any.whl.metadata (4.1 kB)
+Collecting pytest==7.4.3 (from -r requirements.txt (line 6))
+  Using cached pytest-7.4.3-py3-none-any.whl.metadata (7.9 kB)
+Collecting pytest-cov==4.1.0 (from -r requirements.txt (line 7))
+  Using cached pytest_cov-4.1.0-py3-none-any.whl.metadata (26 kB)
+Collecting gunicorn==21.2.0 (from -r requirements.txt (line 10))
+  Using cached gunicorn-21.2.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting flake8==6.1.0 (from -r requirements.txt (line 13))
+  Using cached flake8-6.1.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting black==23.12.1 (from -r requirements.txt (line 14))
+  Using cached black-23.12.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (68 kB)
+Collecting python-dotenv==1.0.0 (from -r requirements.txt (line 17))
+  Using cached python_dotenv-1.0.0-py3-none-any.whl.metadata (21 kB)
+Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.1.1 (from Werkzeug==3.0.1->-r requirements.txt (line 3))
+  Using cached markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting iniconfig (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting packaging (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pluggy<2.0,>=0.12 (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting exceptiongroup>=1.0.0rc8 (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+Collecting tomli>=1.0.0 (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached tomli-2.4.0-py3-none-any.whl.metadata (10 kB)
+Collecting coverage>=5.2.1 (from coverage[toml]>=5.2.1->pytest-cov==4.1.0->-r requirements.txt (line 7))
+  Using cached coverage-7.13.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.5 kB)
+Collecting mccabe<0.8.0,>=0.7.0 (from flake8==6.1.0->-r requirements.txt (line 13))
+  Using cached mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Collecting pycodestyle<2.12.0,>=2.11.0 (from flake8==6.1.0->-r requirements.txt (line 13))
+  Using cached pycodestyle-2.11.1-py2.py3-none-any.whl.metadata (4.5 kB)
+Collecting pyflakes<3.2.0,>=3.1.0 (from flake8==6.1.0->-r requirements.txt (line 13))
+  Using cached pyflakes-3.1.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting mypy-extensions>=0.4.3 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting pathspec>=0.9.0 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached pathspec-1.0.3-py3-none-any.whl.metadata (13 kB)
+Collecting platformdirs>=2 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached platformdirs-4.5.1-py3-none-any.whl.metadata (12 kB)
+Collecting typing-extensions>=4.0.1 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Using cached flask-3.0.0-py3-none-any.whl (99 kB)
+Using cached werkzeug-3.0.1-py3-none-any.whl (226 kB)
+Using cached pytest-7.4.3-py3-none-any.whl (325 kB)
+Using cached pytest_cov-4.1.0-py3-none-any.whl (21 kB)
+Using cached gunicorn-21.2.0-py3-none-any.whl (80 kB)
+Using cached flake8-6.1.0-py2.py3-none-any.whl (58 kB)
+Using cached black-23.12.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+Using cached python_dotenv-1.0.0-py3-none-any.whl (19 kB)
+Using cached mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+Using cached pycodestyle-2.11.1-py2.py3-none-any.whl (31 kB)
+Using cached pyflakes-3.1.0-py2.py3-none-any.whl (62 kB)
+Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Using cached click-8.3.1-py3-none-any.whl (108 kB)
+Using cached coverage-7.13.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (247 kB)
+Using cached exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+Using cached mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached pathspec-1.0.3-py3-none-any.whl (55 kB)
+Using cached platformdirs-4.5.1-py3-none-any.whl (18 kB)
+Using cached tomli-2.4.0-py3-none-any.whl (14 kB)
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Using cached iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Installing collected packages: typing-extensions, tomli, python-dotenv, pyflakes, pycodestyle, pluggy, platformdirs, pathspec, packaging, mypy-extensions, mccabe, MarkupSafe, itsdangerous, iniconfig, coverage, click, blinker, Werkzeug, Jinja2, gunicorn, flake8, exceptiongroup, black, pytest, Flask, pytest-cov
+
+Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.0.1 black-23.12.1 blinker-1.9.0 click-8.3.1 coverage-7.13.1 exceptiongroup-1.3.1 flake8-6.1.0 gunicorn-21.2.0 iniconfig-2.3.0 itsdangerous-2.2.0 mccabe-0.7.0 mypy-extensions-1.1.0 packaging-25.0 pathspec-1.0.3 platformdirs-4.5.1 pluggy-1.6.0 pycodestyle-2.11.1 pyflakes-3.1.0 pytest-7.4.3 pytest-cov-4.1.0 python-dotenv-1.0.0 tomli-2.4.0 typing-extensions-4.15.0
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Code Quality Check)
+[Pipeline] echo
+Running code quality checks...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ flake8 app.py --max-line-length=120 --exclude=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] echo
+Running unit tests...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pytest test_app.py -v --junitxml=test-results.xml --cov=app --cov-report=xml --cov-report=html
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.3, pluggy-1.6.0 -- /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging
+plugins: cov-4.1.0
+collecting ... collected 11 items
+
+test_app.py::test_home_page PASSED                                       [  9%]
+test_app.py::test_health_check PASSED                                    [ 18%]
+test_app.py::test_info_endpoint PASSED                                   [ 27%]
+test_app.py::test_add_numbers_positive PASSED                            [ 36%]
+test_app.py::test_add_numbers_negative PASSED                            [ 45%]
+test_app.py::test_add_numbers_zero PASSED                                [ 54%]
+test_app.py::test_add_numbers_large PASSED                               [ 63%]
+test_app.py::test_invalid_endpoint PASSED                                [ 72%]
+test_app.py::test_add_non_integer PASSED                                 [ 81%]
+test_app.py::test_health_check_returns_json PASSED                       [ 90%]
+test_app.py::test_info_returns_json PASSED                               [100%]
+
+- generated xml file: /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/test-results.xml -
+
+---------- coverage: platform linux, python 3.10.12-final-0 ----------
+Coverage HTML written to dir htmlcov
+Coverage XML written to file coverage.xml
+
+============================== 11 passed in 0.32s ==============================
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] junit
+Recording test results
+[Checks API] No suitable checks publisher found.
+[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at BUILD level /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/htmlcov to Coverage_20Report
+[htmlpublisher] Copying recursive using current thread
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Security Scan)
+[Pipeline] echo
+Running security vulnerability scan...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install safety bandit
+Collecting safety
+  Using cached safety-3.7.0-py3-none-any.whl.metadata (11 kB)
+Collecting bandit
+  Using cached bandit-1.9.3-py3-none-any.whl.metadata (7.1 kB)
+Collecting authlib>=1.2.0 (from safety)
+  Using cached authlib-1.6.6-py2.py3-none-any.whl.metadata (9.8 kB)
+Requirement already satisfied: click>=8.0.2 in ./venv/lib/python3.10/site-packages (from safety) (8.3.1)
+Collecting dparse>=0.6.4 (from safety)
+  Using cached dparse-0.6.4-py3-none-any.whl.metadata (5.5 kB)
+Collecting filelock<4.0,>=3.16.1 (from safety)
+  Using cached filelock-3.20.3-py3-none-any.whl.metadata (2.1 kB)
+Collecting httpx (from safety)
+  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Requirement already satisfied: jinja2>=3.1.0 in ./venv/lib/python3.10/site-packages (from safety) (3.1.6)
+Collecting marshmallow>=3.15.0 (from safety)
+  Using cached marshmallow-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting nltk>=3.9 (from safety)
+  Using cached nltk-3.9.2-py3-none-any.whl.metadata (3.2 kB)
+Requirement already satisfied: packaging>=21.0 in ./venv/lib/python3.10/site-packages (from safety) (25.0)
+Collecting pydantic>=2.6.0 (from safety)
+  Using cached pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
+Collecting requests (from safety)
+  Using cached requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting ruamel-yaml>=0.17.21 (from safety)
+  Using cached ruamel_yaml-0.19.1-py3-none-any.whl.metadata (16 kB)
+Collecting safety-schemas==0.0.16 (from safety)
+  Using cached safety_schemas-0.0.16-py3-none-any.whl.metadata (1.1 kB)
+Collecting tenacity>=8.1.0 (from safety)
+  Using cached tenacity-9.1.2-py3-none-any.whl.metadata (1.2 kB)
+Requirement already satisfied: tomli in ./venv/lib/python3.10/site-packages (from safety) (2.4.0)
+Collecting tomlkit (from safety)
+  Using cached tomlkit-0.14.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting typer>=0.16.0 (from safety)
+  Using cached typer-0.21.1-py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: typing-extensions>=4.7.1 in ./venv/lib/python3.10/site-packages (from safety) (4.15.0)
+Collecting PyYAML>=5.3.1 (from bandit)
+  Using cached pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting stevedore>=1.20.0 (from bandit)
+  Using cached stevedore-5.6.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting rich (from bandit)
+  Using cached rich-14.2.0-py3-none-any.whl.metadata (18 kB)
+Collecting cryptography (from authlib>=1.2.0->safety)
+  Using cached cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.10/site-packages (from jinja2>=3.1.0->safety) (3.0.3)
+Collecting backports-datetime-fromisoformat (from marshmallow>=3.15.0->safety)
+  Using cached backports_datetime_fromisoformat-2.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.3 kB)
+Collecting joblib (from nltk>=3.9->safety)
+  Using cached joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting regex>=2021.8.3 (from nltk>=3.9->safety)
+  Using cached regex-2026.1.15-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting tqdm (from nltk>=3.9->safety)
+  Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.6.0->safety)
+  Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.41.5 (from pydantic>=2.6.0->safety)
+  Using cached pydantic_core-2.41.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic>=2.6.0->safety)
+  Using cached typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting shellingham>=1.3.0 (from typer>=0.16.0->safety)
+  Using cached shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting markdown-it-py>=2.2.0 (from rich->bandit)
+  Using cached markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich->bandit)
+  Using cached pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->bandit)
+  Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting cffi>=2.0.0 (from cryptography->authlib>=1.2.0->safety)
+  Using cached cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography->authlib>=1.2.0->safety)
+  Using cached pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+Collecting anyio (from httpx->safety)
+  Using cached anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
+Collecting certifi (from httpx->safety)
+  Using cached certifi-2026.1.4-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx->safety)
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx->safety)
+  Using cached idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx->safety)
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Requirement already satisfied: exceptiongroup>=1.0.2 in ./venv/lib/python3.10/site-packages (from anyio->httpx->safety) (1.3.1)
+Collecting charset_normalizer<4,>=2 (from requests->safety)
+  Using cached charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (37 kB)
+Collecting urllib3<3,>=1.21.1 (from requests->safety)
+  Using cached urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Using cached safety-3.7.0-py3-none-any.whl (312 kB)
+Using cached safety_schemas-0.0.16-py3-none-any.whl (39 kB)
+Using cached filelock-3.20.3-py3-none-any.whl (16 kB)
+Using cached bandit-1.9.3-py3-none-any.whl (134 kB)
+Using cached authlib-1.6.6-py2.py3-none-any.whl (244 kB)
+Using cached dparse-0.6.4-py3-none-any.whl (11 kB)
+Using cached marshmallow-4.2.0-py3-none-any.whl (48 kB)
+Using cached nltk-3.9.2-py3-none-any.whl (1.5 MB)
+Using cached pydantic-2.12.5-py3-none-any.whl (463 kB)
+Using cached pydantic_core-2.41.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Using cached pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (770 kB)
+Using cached regex-2026.1.15-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (791 kB)
+Using cached ruamel_yaml-0.19.1-py3-none-any.whl (118 kB)
+Using cached stevedore-5.6.0-py3-none-any.whl (54 kB)
+Using cached tenacity-9.1.2-py3-none-any.whl (28 kB)
+Using cached typer-0.21.1-py3-none-any.whl (47 kB)
+Using cached rich-14.2.0-py3-none-any.whl (243 kB)
+Using cached pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Using cached markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Using cached shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Using cached typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Using cached backports_datetime_fromisoformat-2.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (52 kB)
+Using cached cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Using cached cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (216 kB)
+Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached anyio-4.12.1-py3-none-any.whl (113 kB)
+Using cached idna-3.11-py3-none-any.whl (71 kB)
+Using cached certifi-2026.1.4-py3-none-any.whl (152 kB)
+Using cached joblib-1.5.3-py3-none-any.whl (309 kB)
+Using cached pycparser-2.23-py3-none-any.whl (118 kB)
+Using cached requests-2.32.5-py3-none-any.whl (64 kB)
+Using cached charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+Using cached urllib3-2.6.3-py3-none-any.whl (131 kB)
+Using cached tomlkit-0.14.0-py3-none-any.whl (39 kB)
+Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+Installing collected packages: urllib3, typing-inspection, tqdm, tomlkit, tenacity, stevedore, shellingham, ruamel-yaml, regex, PyYAML, pygments, pydantic-core, pycparser, mdurl, joblib, idna, h11, filelock, dparse, charset_normalizer, certifi, backports-datetime-fromisoformat, annotated-types, requests, pydantic, nltk, marshmallow, markdown-it-py, httpcore, cffi, anyio, safety-schemas, rich, httpx, cryptography, typer, bandit, authlib, safety
+
+Successfully installed PyYAML-6.0.3 annotated-types-0.7.0 anyio-4.12.1 authlib-1.6.6 backports-datetime-fromisoformat-2.0.3 bandit-1.9.3 certifi-2026.1.4 cffi-2.0.0 charset_normalizer-3.4.4 cryptography-46.0.3 dparse-0.6.4 filelock-3.20.3 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.11 joblib-1.5.3 markdown-it-py-4.0.0 marshmallow-4.2.0 mdurl-0.1.2 nltk-3.9.2 pycparser-2.23 pydantic-2.12.5 pydantic-core-2.41.5 pygments-2.19.2 regex-2026.1.15 requests-2.32.5 rich-14.2.0 ruamel-yaml-0.19.1 safety-3.7.0 safety-schemas-0.0.16 shellingham-1.5.4 stevedore-5.6.0 tenacity-9.1.2 tomlkit-0.14.0 tqdm-4.67.1 typer-0.21.1 typing-inspection-0.4.2 urllib3-2.6.3
++ echo Running Safety check...
+Running Safety check...
++ safety check --json
++ true
++ echo Running Bandit security scan...
+Running Bandit security scan...
++ bandit -r app.py -f json -o bandit-report.json
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[json]	INFO	JSON output written to file: bandit-report.json
++ true
++ echo Security scans completed!
+Security scans completed!
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Artifact)
+[Pipeline] echo
+Creating deployment artifact...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ tar -czf flask-app-11.tar.gz --exclude=venv --exclude=*.pyc --exclude=__pycache__ app.py requirements.txt
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] archiveArtifacts
+Archiving artifacts
+Recording fingerprints
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Staging)
+[Pipeline] echo
+Deploying to staging environment...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sshagent
+[ssh-agent] Using credentials ****
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-XXXXXXWjDRQL/agent.5888
+SSH_AGENT_PID=5891
+Running ssh-add (command line suppressed)
+Identity added: /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging@tmp/private_key_17421059893353317528.key (/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging@tmp/private_key_17421059893353317528.key)
+[ssh-agent] Started.
+[Pipeline] {
+[Pipeline] sh
++ echo Deploying to staging server: ****
+Deploying to staging server: ****
++ echo Copying files to staging server...
+Copying files to staging server...
++ scp -o StrictHostKeyChecking=no flask-app-11.tar.gz ****@****:/var/www/flask-app
++ echo Extracting and installing on staging server...
+Extracting and installing on staging server...
++ ssh -o StrictHostKeyChecking=no ****@**** cd /var/www/flask-app && tar -xzf flask-app-11.tar.gz
++ ssh -o StrictHostKeyChecking=no ****@**** cd /var/www/flask-app && python3 -m venv venv && venv/bin/pip install -r requirements.txt
+Requirement already satisfied: Flask==3.0.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 2)) (3.0.0)
+Requirement already satisfied: Werkzeug==3.0.1 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 3)) (3.0.1)
+Requirement already satisfied: pytest==7.4.3 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 6)) (7.4.3)
+Requirement already satisfied: pytest-cov==4.1.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 7)) (4.1.0)
+Requirement already satisfied: gunicorn==21.2.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 10)) (21.2.0)
+Requirement already satisfied: flake8==6.1.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 13)) (6.1.0)
+Requirement already satisfied: black==23.12.1 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 14)) (23.12.1)
+Requirement already satisfied: python-dotenv==1.0.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 17)) (1.0.0)
+Requirement already satisfied: Jinja2>=3.1.2 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (3.1.6)
+Requirement already satisfied: itsdangerous>=2.1.2 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (2.2.0)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (8.3.1)
+Requirement already satisfied: blinker>=1.6.2 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (1.9.0)
+Requirement already satisfied: MarkupSafe>=2.1.1 in ./venv/lib/python3.12/site-packages (from Werkzeug==3.0.1->-r requirements.txt (line 3)) (3.0.3)
+Requirement already satisfied: iniconfig in ./venv/lib/python3.12/site-packages (from pytest==7.4.3->-r requirements.txt (line 6)) (2.3.0)
+Requirement already satisfied: packaging in ./venv/lib/python3.12/site-packages (from pytest==7.4.3->-r requirements.txt (line 6)) (25.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in ./venv/lib/python3.12/site-packages (from pytest==7.4.3->-r requirements.txt (line 6)) (1.6.0)
+Requirement already satisfied: coverage>=5.2.1 in ./venv/lib/python3.12/site-packages (from coverage[toml]>=5.2.1->pytest-cov==4.1.0->-r requirements.txt (line 7)) (7.13.1)
+Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in ./venv/lib/python3.12/site-packages (from flake8==6.1.0->-r requirements.txt (line 13)) (0.7.0)
+Requirement already satisfied: pycodestyle<2.12.0,>=2.11.0 in ./venv/lib/python3.12/site-packages (from flake8==6.1.0->-r requirements.txt (line 13)) (2.11.1)
+Requirement already satisfied: pyflakes<3.2.0,>=3.1.0 in ./venv/lib/python3.12/site-packages (from flake8==6.1.0->-r requirements.txt (line 13)) (3.1.0)
+Requirement already satisfied: mypy-extensions>=0.4.3 in ./venv/lib/python3.12/site-packages (from black==23.12.1->-r requirements.txt (line 14)) (1.1.0)
+Requirement already satisfied: pathspec>=0.9.0 in ./venv/lib/python3.12/site-packages (from black==23.12.1->-r requirements.txt (line 14)) (1.0.3)
+Requirement already satisfied: platformdirs>=2 in ./venv/lib/python3.12/site-packages (from black==23.12.1->-r requirements.txt (line 14)) (4.5.1)
++ echo Restarting Flask service on staging...
+Restarting Flask service on staging...
++ ssh -o StrictHostKeyChecking=no ****@**** sudo systemctl restart flask-app
+Warning: The unit file, source configuration file or drop-ins of flask-app.service changed on disk. Run 'systemctl daemon-reload' to reload units.
++ echo Deployment to staging completed successfully!
+Deployment to staging completed successfully!
+[Pipeline] }
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 5891 killed;
+[ssh-agent] Stopped.
+[Pipeline] // sshagent
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Production)
+Stage "Deploy to Production" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Smoke Test - Staging)
+[Pipeline] echo
+Running smoke tests on staging...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ echo Waiting for service to start...
+Waiting for service to start...
++ sleep 5
++ echo Testing health endpoint...
+Testing health endpoint...
++ curl -f http://****/api/health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100    69  100    69    0     0    101      0 --:--:-- --:--:-- --:--:--   101
+{"message":"Application is running successfully","status":"healthy"}
++ echo Testing info endpoint...
+Testing info endpoint...
++ curl -f http://****/api/info
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   165  100   165    0     0    280      0 --:--:-- --:--:-- --:--:--   280
+{"description":"A simple Flask application demonstrating CI/CD with Jenkins and GitHub Actions","environment":"staging","name":"Flask CI/CD Demo","version":"1.0.0"}
++ echo All smoke tests passed!
+All smoke tests passed!
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Health Check - Production)
+Stage "Health Check - Production" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+Cleaning up workspace...
+[Pipeline] cleanWs
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
+[Pipeline] echo
+Pipeline executed successfully!
+[Pipeline] emailext
+Sending email to: ghanshyamjobi+jenkins@gmail.com
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+
 ```
 
-**What happens:**
-- Clones repository from Git
-- Uses branch/tag that triggered the build
-- Checks out to Jenkins workspace
+### Stage 4. Email received
 
-### Stage 2: Setup Environment
+<img width="1167" height="444" alt="image" src="https://github.com/user-attachments/assets/cedc0005-a15e-4c91-a74a-c436510094bc" />
 
-**Purpose**: Create Python virtual environment
 
-```groovy
-stage('Setup Environment') {
-    steps {
-        script {
-            sh '''
-                python3 -m venv ${VIRTUAL_ENV}
-                . ${VIRTUAL_ENV}/bin/activate
-                pip install --upgrade pip
-            '''
-        }
-    }
-}
+## 🔧 Jenkins Multibranch Pipeline Stages
+
+### Stage 1: configure pipeline
+
+<img width="1209" height="775" alt="image" src="https://github.com/user-attachments/assets/58a9388e-4dec-4bf6-a68b-f7f424f7fe58" />
+
+<img width="1204" height="767" alt="image" src="https://github.com/user-attachments/assets/f7d0b86c-3970-436b-85be-38f8ddb0b668" />
+
+<img width="1210" height="765" alt="image" src="https://github.com/user-attachments/assets/c3667224-7f2d-40ce-920a-08fb93f92f3a" />
+
+<img width="1203" height="767" alt="image" src="https://github.com/user-attachments/assets/84c7f310-7bf0-492f-9a4a-8412e75416c4" />
+
+### Stage 2: Push code staging branch
+
 ```
-
-**What happens:**
-- Creates isolated Python environment
-- Upgrades pip to latest version
-- Prepares for dependency installation
-
-### Stage 3: Build
-
-**Purpose**: Install application dependencies
-
-```groovy
-stage('Build') {
-    steps {
-        script {
-            sh '''
-                . ${VIRTUAL_ENV}/bin/activate
-                pip install -r requirements.txt
-            '''
-        }
-    }
-}
-```
-
-**What happens:**
-- Activates virtual environment
-- Installs all packages from requirements.txt
-- Verifies successful installation
-
-### Stage 4: Code Quality Check
-
-**Purpose**: Run code linting with flake8
-
-```groovy
-stage('Code Quality Check') {
-    steps {
-        script {
-            sh '''
-                . ${VIRTUAL_ENV}/bin/activate
-                flake8 app.py --max-line-length=120 --exclude=${VIRTUAL_ENV} || true
-            '''
-        }
-    }
-}
-```
-
-**What happens:**
-- Checks code style and quality
-- Identifies syntax errors
-- Reports violations
-- Continues even if violations found (|| true)
-
-### Stage 5: Test
-
-**Purpose**: Run unit tests with coverage
-
-```groovy
-stage('Test') {
-    steps {
-        script {
-            sh '''
-                . ${VIRTUAL_ENV}/bin/activate
-                pytest test_app.py -v --junitxml=test-results.xml \
-                       --cov=app --cov-report=xml --cov-report=html
-            '''
-        }
-    }
-    post {
-        always {
-            junit 'test-results.xml'
-            publishHTML(target: [
-                reportDir: 'htmlcov',
-                reportFiles: 'index.html',
-                reportName: 'Coverage Report'
-            ])
-        }
-    }
-}
-```
-
-**What happens:**
-- Runs all tests in test_app.py
-- Generates JUnit XML results
-- Creates coverage report (XML and HTML)
-- Publishes results to Jenkins UI
-- Coverage report viewable in build page
-
-**Artifacts Created:**
-- `test-results.xml` (JUnit format)
-- `htmlcov/` (HTML coverage report)
-
-### Stage 6: Security Scan
-
-**Purpose**: Scan for security vulnerabilities
-
-```groovy
-stage('Security Scan') {
-    steps {
-        script {
-            sh '''
-                . ${VIRTUAL_ENV}/bin/activate
-                pip install safety bandit
-                
-                # Check dependency vulnerabilities
-                safety check --json > safety-report.json || true
-                
-                # Check code security issues
-                bandit -r app.py -f json -o bandit-report.json || true
-            '''
-        }
-    }
-    post {
-        always {
-            archiveArtifacts artifacts: '*-report.json', allowEmptyArchive: true
-        }
-    }
-}
-```
-
-**What happens:**
-- **Safety**: Scans requirements.txt for vulnerable packages
-- **Bandit**: Scans Python code for security issues
-- Generates JSON reports
-- Archives reports as build artifacts
-
-**Artifacts Created:**
-- `safety-report.json`
-- `bandit-report.json`
-
-### Stage 7: Build Artifact
-
-**Purpose**: Create deployment package
-
-```groovy
-stage('Build Artifact') {
-    steps {
-        script {
-            sh '''
-                tar -czf flask-app-${BUILD_NUMBER}.tar.gz \
-                    app.py requirements.txt \
-                    --exclude=${VIRTUAL_ENV} \
-                    --exclude=*.pyc \
-                    --exclude=__pycache__
-            '''
-        }
-        archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
-    }
-}
-```
-
-**What happens:**
-- Creates compressed archive (.tar.gz)
-- Includes app.py and requirements.txt
-- Excludes virtual environment and Python cache
-- Names file with build number
-- Archives for download
-
-**Artifact**: `flask-app-<build-number>.tar.gz`
-
-### Stage 8: Deploy to Staging
-
-**Purpose**: Deploy to staging server (only on `staging` branch)
-
-**Trigger**: Push to `staging` branch
-
-```groovy
-stage('Deploy to Staging') {
-    when {
-        branch 'staging'
-    }
-    steps {
-        script {
-            sh '''
-                # Setup SSH key
-                mkdir -p ~/.ssh
-                echo "${STAGING_SSH_KEY}" > ~/.ssh/deploy_key_staging
-                chmod 600 ~/.ssh/deploy_key_staging
-                
-                # Copy files to server
-                scp -i ~/.ssh/deploy_key_staging -o StrictHostKeyChecking=no \
-                    flask-app-${BUILD_NUMBER}.tar.gz \
-                    ${STAGING_USER}@${STAGING_HOST}:${STAGING_DEPLOY_PATH}
-                
-                # Extract and install
-                ssh -i ~/.ssh/deploy_key_staging -o StrictHostKeyChecking=no \
-                    ${STAGING_USER}@${STAGING_HOST} \
-                    "cd ${STAGING_DEPLOY_PATH} && tar -xzf flask-app-${BUILD_NUMBER}.tar.gz"
-                
-                # Install dependencies
-                ssh ... "cd ${STAGING_DEPLOY_PATH}/build && ../venv/bin/pip install -r requirements.txt"
-                
-                # Copy files and restart service
-                ssh ... "cp ${STAGING_DEPLOY_PATH}/build/* ${STAGING_DEPLOY_PATH}/"
-                ssh ... "sudo systemctl restart flask-app"
-                
-                # Cleanup
-                rm -f ~/.ssh/deploy_key_staging
-            '''
-        }
-    }
-}
-```
-
-**What happens:**
-1. Creates SSH key file from credentials
-2. Copies artifact to staging server via SCP
-3. Extracts files on server
-4. Installs dependencies in server's venv
-5. Copies files to deployment directory
-6. Restarts Flask systemd service
-7. Cleans up SSH key
-
-### Stage 9: Deploy to Production
-
-**Purpose**: Deploy to production server (only on version tags)
-
-**Trigger**: Push tag matching `v*.*.*` (e.g., v1.0.0)
-
-```groovy
-stage('Deploy to Production') {
-    when {
-        tag pattern: "v\\d+\\.\\d+\\.\\d+", comparator: "REGEXP"
-    }
-    // Same steps as staging but using production credentials
-}
-```
-
-**What happens:**
-- Same deployment process as staging
-- Uses production server credentials
-- Only triggered by version tags
-- More cautious deployment (production environment)
-
-### Stage 10: Smoke Test (Staging)
-
-**Purpose**: Verify staging deployment
-
-```groovy
-stage('Smoke Test - Staging') {
-    when {
-        branch 'staging'
-    }
-    steps {
-        script {
-            sh '''
-                sleep 5  # Wait for service to start
-                curl -f http://${STAGING_HOST}/api/health || exit 1
-                curl -f http://${STAGING_HOST}/api/info || exit 1
-            '''
-        }
-    }
-}
-```
-
-**What happens:**
-- Waits 5 seconds for service to stabilize
-- Tests `/api/health` endpoint
-- Tests `/api/info` endpoint
-- Fails build if any endpoint fails
-
-### Stage 11: Health Check (Production)
-
-**Purpose**: Verify production deployment
-
-```groovy
-stage('Health Check - Production') {
-    when {
-        tag pattern: "v\\d+\\.\\d+\\.\\d+", comparator: "REGEXP"
-    }
-    // Same as smoke test but for production
-}
-```
-
-**What happens:**
-- Verifies production endpoints
-- Ensures zero-downtime deployment
-- Validates service is responding correctly
-
----
-
-## 🎮 Running the Pipeline
-
-### Method 1: Create Pipeline Job
-
-1. **New Item**
-   - Click "New Item" in Jenkins dashboard
-   - Enter name: `Flask-CI-CD-Pipeline`
-   - Select: **Pipeline**
-   - Click **OK**
-
-2. **Configure Pipeline**
-   - **General**: Check "GitHub project" (optional)
-     - Project URL: `https://github.com/username/repo`
-   
-   - **Build Triggers**: Check "Poll SCM" or "GitHub hook trigger"
-     - Schedule: `H/5 * * * *` (poll every 5 minutes)
-   
-   - **Pipeline**:
-     - Definition: **Pipeline script from SCM**
-     - SCM: **Git**
-     - Repository URL: `https://github.com/username/repo.git`
-     - Credentials: Add GitHub credentials if private
-     - Branch Specifier: `*/main` (or `*/*` for all branches)
-     - Script Path: `Jenkinsfile`
-
-3. **Save**
-
-### Method 2: Multibranch Pipeline (Recommended)
-
-1. **New Item**
-   - Name: `Flask-CI-CD-Multibranch`
-   - Type: **Multibranch Pipeline**
-   - Click **OK**
-
-2. **Configure**
-   - **Branch Sources**: Add source → Git
-     - Project Repository: `https://github.com/username/repo.git`
-     - Credentials: Add if needed
-   
-   - **Build Configuration**:
-     - Mode: by Jenkinsfile
-     - Script Path: `Jenkinsfile`
-   
-   - **Scan Multibranch Pipeline Triggers**:
-     - Check "Periodically if not otherwise run"
-     - Interval: 5 minutes
-
-3. **Save**
-
-### Triggering Builds
-
-#### Manual Trigger:
-1. Go to pipeline
-2. Click **Build Now** (specific branch) or **Scan Multibranch Pipeline Now**
-
-#### Automatic Trigger - Push to Main/Staging:
-```bash
-# For staging deployment
-git checkout staging
-git merge main
+git add app.py
+git commit -m "push code to staging"
 git push origin staging
-# Jenkins automatically builds and deploys to staging
+```
+### Stage 2: Push code production tag branch
 
-# For production deployment
-git tag -a v1.0.0 -m "Release v1.0.0"
-git push origin v1.0.0
-# Jenkins automatically builds and deploys to production
+```
+git tag -a v1.3.0 -m "Release version 1.3.0"
+git push origin v1.3.0
+```
+### Stage 3. CI/CD logs for staging
+
+```
+Started by user admin
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/caches/git-640a1658cad41f253def4865ccabb7b3/.git # timeout=10
+Setting origin to https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git config remote.origin.url https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git # timeout=10
+Fetching origin...
+Fetching upstream changes from origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git config --get remote.origin.url # timeout=10
+ > git fetch --no-tags --force --progress -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/feature/changes
+Seen branch in repository origin/main
+Seen branch in repository origin/revert-4-feature/changes
+Seen branch in repository origin/staging
+Seen 4 remote branches
+Obtained Jenkinsfile from f725c1df22493fef0e38bc2f7f441b876bafd67a
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning with configured refspecs honoured and without tags
+Cloning repository https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git init /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging # timeout=10
+Fetching upstream changes from https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --no-tags --force --progress -- https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+Checking out Revision f725c1df22493fef0e38bc2f7f441b876bafd67a (staging)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f725c1df22493fef0e38bc2f7f441b876bafd67a # timeout=10
+Commit message: "Merge pull request #6 from ghanshyamca/feature/changes"
+ > git rev-list --no-walk f725c1df22493fef0e38bc2f7f441b876bafd67a # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withCredentials
+Masking supported pattern matches of $PRODUCTION_HOST or $PRODUCTION_USER or $STAGING_USER or $STAGING_HOST
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] echo
+Checking out source code...
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --no-tags --force --progress -- https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision f725c1df22493fef0e38bc2f7f441b876bafd67a (staging)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f725c1df22493fef0e38bc2f7f441b876bafd67a # timeout=10
+Commit message: "Merge pull request #6 from ghanshyamca/feature/changes"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Setup Environment)
+[Pipeline] echo
+Setting up Python virtual environment...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ python3 -m venv venv
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.10/site-packages (22.0.2)
+Collecting pip
+  Using cached pip-25.3-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.2
+    Uninstalling pip-22.0.2:
+      Successfully uninstalled pip-22.0.2
+Successfully installed pip-25.3
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] echo
+Installing dependencies...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install -r requirements.txt
+Collecting Flask==3.0.0 (from -r requirements.txt (line 2))
+  Using cached flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting Werkzeug==3.0.1 (from -r requirements.txt (line 3))
+  Using cached werkzeug-3.0.1-py3-none-any.whl.metadata (4.1 kB)
+Collecting pytest==7.4.3 (from -r requirements.txt (line 6))
+  Using cached pytest-7.4.3-py3-none-any.whl.metadata (7.9 kB)
+Collecting pytest-cov==4.1.0 (from -r requirements.txt (line 7))
+  Using cached pytest_cov-4.1.0-py3-none-any.whl.metadata (26 kB)
+Collecting gunicorn==21.2.0 (from -r requirements.txt (line 10))
+  Using cached gunicorn-21.2.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting flake8==6.1.0 (from -r requirements.txt (line 13))
+  Using cached flake8-6.1.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting black==23.12.1 (from -r requirements.txt (line 14))
+  Using cached black-23.12.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (68 kB)
+Collecting python-dotenv==1.0.0 (from -r requirements.txt (line 17))
+  Using cached python_dotenv-1.0.0-py3-none-any.whl.metadata (21 kB)
+Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.1.1 (from Werkzeug==3.0.1->-r requirements.txt (line 3))
+  Using cached markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting iniconfig (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting packaging (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pluggy<2.0,>=0.12 (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting exceptiongroup>=1.0.0rc8 (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+Collecting tomli>=1.0.0 (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached tomli-2.4.0-py3-none-any.whl.metadata (10 kB)
+Collecting coverage>=5.2.1 (from coverage[toml]>=5.2.1->pytest-cov==4.1.0->-r requirements.txt (line 7))
+  Using cached coverage-7.13.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.5 kB)
+Collecting mccabe<0.8.0,>=0.7.0 (from flake8==6.1.0->-r requirements.txt (line 13))
+  Using cached mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Collecting pycodestyle<2.12.0,>=2.11.0 (from flake8==6.1.0->-r requirements.txt (line 13))
+  Using cached pycodestyle-2.11.1-py2.py3-none-any.whl.metadata (4.5 kB)
+Collecting pyflakes<3.2.0,>=3.1.0 (from flake8==6.1.0->-r requirements.txt (line 13))
+  Using cached pyflakes-3.1.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting mypy-extensions>=0.4.3 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting pathspec>=0.9.0 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached pathspec-1.0.3-py3-none-any.whl.metadata (13 kB)
+Collecting platformdirs>=2 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached platformdirs-4.5.1-py3-none-any.whl.metadata (12 kB)
+Collecting typing-extensions>=4.0.1 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Using cached flask-3.0.0-py3-none-any.whl (99 kB)
+Using cached werkzeug-3.0.1-py3-none-any.whl (226 kB)
+Using cached pytest-7.4.3-py3-none-any.whl (325 kB)
+Using cached pytest_cov-4.1.0-py3-none-any.whl (21 kB)
+Using cached gunicorn-21.2.0-py3-none-any.whl (80 kB)
+Using cached flake8-6.1.0-py2.py3-none-any.whl (58 kB)
+Using cached black-23.12.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+Using cached python_dotenv-1.0.0-py3-none-any.whl (19 kB)
+Using cached mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+Using cached pycodestyle-2.11.1-py2.py3-none-any.whl (31 kB)
+Using cached pyflakes-3.1.0-py2.py3-none-any.whl (62 kB)
+Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Using cached click-8.3.1-py3-none-any.whl (108 kB)
+Using cached coverage-7.13.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (247 kB)
+Using cached exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+Using cached mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached pathspec-1.0.3-py3-none-any.whl (55 kB)
+Using cached platformdirs-4.5.1-py3-none-any.whl (18 kB)
+Using cached tomli-2.4.0-py3-none-any.whl (14 kB)
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Using cached iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Installing collected packages: typing-extensions, tomli, python-dotenv, pyflakes, pycodestyle, pluggy, platformdirs, pathspec, packaging, mypy-extensions, mccabe, MarkupSafe, itsdangerous, iniconfig, coverage, click, blinker, Werkzeug, Jinja2, gunicorn, flake8, exceptiongroup, black, pytest, Flask, pytest-cov
+
+Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.0.1 black-23.12.1 blinker-1.9.0 click-8.3.1 coverage-7.13.1 exceptiongroup-1.3.1 flake8-6.1.0 gunicorn-21.2.0 iniconfig-2.3.0 itsdangerous-2.2.0 mccabe-0.7.0 mypy-extensions-1.1.0 packaging-25.0 pathspec-1.0.3 platformdirs-4.5.1 pluggy-1.6.0 pycodestyle-2.11.1 pyflakes-3.1.0 pytest-7.4.3 pytest-cov-4.1.0 python-dotenv-1.0.0 tomli-2.4.0 typing-extensions-4.15.0
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Code Quality Check)
+[Pipeline] echo
+Running code quality checks...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ flake8 app.py --max-line-length=120 --exclude=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] echo
+Running unit tests...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pytest test_app.py -v --junitxml=test-results.xml --cov=app --cov-report=xml --cov-report=html
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.3, pluggy-1.6.0 -- /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging
+plugins: cov-4.1.0
+collecting ... collected 11 items
+
+test_app.py::test_home_page PASSED                                       [  9%]
+test_app.py::test_health_check PASSED                                    [ 18%]
+test_app.py::test_info_endpoint PASSED                                   [ 27%]
+test_app.py::test_add_numbers_positive PASSED                            [ 36%]
+test_app.py::test_add_numbers_negative PASSED                            [ 45%]
+test_app.py::test_add_numbers_zero PASSED                                [ 54%]
+test_app.py::test_add_numbers_large PASSED                               [ 63%]
+test_app.py::test_invalid_endpoint PASSED                                [ 72%]
+test_app.py::test_add_non_integer PASSED                                 [ 81%]
+test_app.py::test_health_check_returns_json PASSED                       [ 90%]
+test_app.py::test_info_returns_json PASSED                               [100%]
+
+- generated xml file: /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/test-results.xml -
+
+---------- coverage: platform linux, python 3.10.12-final-0 ----------
+Coverage HTML written to dir htmlcov
+Coverage XML written to file coverage.xml
+
+============================== 11 passed in 0.32s ==============================
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] junit
+Recording test results
+[Checks API] No suitable checks publisher found.
+[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at BUILD level /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/htmlcov to Coverage_20Report
+[htmlpublisher] Copying recursive using current thread
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Security Scan)
+[Pipeline] echo
+Running security vulnerability scan...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install safety bandit
+Collecting safety
+  Using cached safety-3.7.0-py3-none-any.whl.metadata (11 kB)
+Collecting bandit
+  Using cached bandit-1.9.3-py3-none-any.whl.metadata (7.1 kB)
+Collecting authlib>=1.2.0 (from safety)
+  Using cached authlib-1.6.6-py2.py3-none-any.whl.metadata (9.8 kB)
+Requirement already satisfied: click>=8.0.2 in ./venv/lib/python3.10/site-packages (from safety) (8.3.1)
+Collecting dparse>=0.6.4 (from safety)
+  Using cached dparse-0.6.4-py3-none-any.whl.metadata (5.5 kB)
+Collecting filelock<4.0,>=3.16.1 (from safety)
+  Using cached filelock-3.20.3-py3-none-any.whl.metadata (2.1 kB)
+Collecting httpx (from safety)
+  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Requirement already satisfied: jinja2>=3.1.0 in ./venv/lib/python3.10/site-packages (from safety) (3.1.6)
+Collecting marshmallow>=3.15.0 (from safety)
+  Using cached marshmallow-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting nltk>=3.9 (from safety)
+  Using cached nltk-3.9.2-py3-none-any.whl.metadata (3.2 kB)
+Requirement already satisfied: packaging>=21.0 in ./venv/lib/python3.10/site-packages (from safety) (25.0)
+Collecting pydantic>=2.6.0 (from safety)
+  Using cached pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
+Collecting requests (from safety)
+  Using cached requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting ruamel-yaml>=0.17.21 (from safety)
+  Using cached ruamel_yaml-0.19.1-py3-none-any.whl.metadata (16 kB)
+Collecting safety-schemas==0.0.16 (from safety)
+  Using cached safety_schemas-0.0.16-py3-none-any.whl.metadata (1.1 kB)
+Collecting tenacity>=8.1.0 (from safety)
+  Using cached tenacity-9.1.2-py3-none-any.whl.metadata (1.2 kB)
+Requirement already satisfied: tomli in ./venv/lib/python3.10/site-packages (from safety) (2.4.0)
+Collecting tomlkit (from safety)
+  Using cached tomlkit-0.14.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting typer>=0.16.0 (from safety)
+  Using cached typer-0.21.1-py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: typing-extensions>=4.7.1 in ./venv/lib/python3.10/site-packages (from safety) (4.15.0)
+Collecting PyYAML>=5.3.1 (from bandit)
+  Using cached pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting stevedore>=1.20.0 (from bandit)
+  Using cached stevedore-5.6.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting rich (from bandit)
+  Using cached rich-14.2.0-py3-none-any.whl.metadata (18 kB)
+Collecting cryptography (from authlib>=1.2.0->safety)
+  Using cached cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.10/site-packages (from jinja2>=3.1.0->safety) (3.0.3)
+Collecting backports-datetime-fromisoformat (from marshmallow>=3.15.0->safety)
+  Using cached backports_datetime_fromisoformat-2.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.3 kB)
+Collecting joblib (from nltk>=3.9->safety)
+  Using cached joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting regex>=2021.8.3 (from nltk>=3.9->safety)
+  Using cached regex-2026.1.15-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting tqdm (from nltk>=3.9->safety)
+  Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.6.0->safety)
+  Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.41.5 (from pydantic>=2.6.0->safety)
+  Using cached pydantic_core-2.41.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic>=2.6.0->safety)
+  Using cached typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting shellingham>=1.3.0 (from typer>=0.16.0->safety)
+  Using cached shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting markdown-it-py>=2.2.0 (from rich->bandit)
+  Using cached markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich->bandit)
+  Using cached pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->bandit)
+  Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting cffi>=2.0.0 (from cryptography->authlib>=1.2.0->safety)
+  Using cached cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography->authlib>=1.2.0->safety)
+  Using cached pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+Collecting anyio (from httpx->safety)
+  Using cached anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
+Collecting certifi (from httpx->safety)
+  Using cached certifi-2026.1.4-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx->safety)
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx->safety)
+  Using cached idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx->safety)
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Requirement already satisfied: exceptiongroup>=1.0.2 in ./venv/lib/python3.10/site-packages (from anyio->httpx->safety) (1.3.1)
+Collecting charset_normalizer<4,>=2 (from requests->safety)
+  Using cached charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (37 kB)
+Collecting urllib3<3,>=1.21.1 (from requests->safety)
+  Using cached urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Using cached safety-3.7.0-py3-none-any.whl (312 kB)
+Using cached safety_schemas-0.0.16-py3-none-any.whl (39 kB)
+Using cached filelock-3.20.3-py3-none-any.whl (16 kB)
+Using cached bandit-1.9.3-py3-none-any.whl (134 kB)
+Using cached authlib-1.6.6-py2.py3-none-any.whl (244 kB)
+Using cached dparse-0.6.4-py3-none-any.whl (11 kB)
+Using cached marshmallow-4.2.0-py3-none-any.whl (48 kB)
+Using cached nltk-3.9.2-py3-none-any.whl (1.5 MB)
+Using cached pydantic-2.12.5-py3-none-any.whl (463 kB)
+Using cached pydantic_core-2.41.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Using cached pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (770 kB)
+Using cached regex-2026.1.15-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (791 kB)
+Using cached ruamel_yaml-0.19.1-py3-none-any.whl (118 kB)
+Using cached stevedore-5.6.0-py3-none-any.whl (54 kB)
+Using cached tenacity-9.1.2-py3-none-any.whl (28 kB)
+Using cached typer-0.21.1-py3-none-any.whl (47 kB)
+Using cached rich-14.2.0-py3-none-any.whl (243 kB)
+Using cached pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Using cached markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Using cached shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Using cached typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Using cached backports_datetime_fromisoformat-2.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (52 kB)
+Using cached cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Using cached cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (216 kB)
+Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached anyio-4.12.1-py3-none-any.whl (113 kB)
+Using cached idna-3.11-py3-none-any.whl (71 kB)
+Using cached certifi-2026.1.4-py3-none-any.whl (152 kB)
+Using cached joblib-1.5.3-py3-none-any.whl (309 kB)
+Using cached pycparser-2.23-py3-none-any.whl (118 kB)
+Using cached requests-2.32.5-py3-none-any.whl (64 kB)
+Using cached charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+Using cached urllib3-2.6.3-py3-none-any.whl (131 kB)
+Using cached tomlkit-0.14.0-py3-none-any.whl (39 kB)
+Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+Installing collected packages: urllib3, typing-inspection, tqdm, tomlkit, tenacity, stevedore, shellingham, ruamel-yaml, regex, PyYAML, pygments, pydantic-core, pycparser, mdurl, joblib, idna, h11, filelock, dparse, charset_normalizer, certifi, backports-datetime-fromisoformat, annotated-types, requests, pydantic, nltk, marshmallow, markdown-it-py, httpcore, cffi, anyio, safety-schemas, rich, httpx, cryptography, typer, bandit, authlib, safety
+
+Successfully installed PyYAML-6.0.3 annotated-types-0.7.0 anyio-4.12.1 authlib-1.6.6 backports-datetime-fromisoformat-2.0.3 bandit-1.9.3 certifi-2026.1.4 cffi-2.0.0 charset_normalizer-3.4.4 cryptography-46.0.3 dparse-0.6.4 filelock-3.20.3 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.11 joblib-1.5.3 markdown-it-py-4.0.0 marshmallow-4.2.0 mdurl-0.1.2 nltk-3.9.2 pycparser-2.23 pydantic-2.12.5 pydantic-core-2.41.5 pygments-2.19.2 regex-2026.1.15 requests-2.32.5 rich-14.2.0 ruamel-yaml-0.19.1 safety-3.7.0 safety-schemas-0.0.16 shellingham-1.5.4 stevedore-5.6.0 tenacity-9.1.2 tomlkit-0.14.0 tqdm-4.67.1 typer-0.21.1 typing-inspection-0.4.2 urllib3-2.6.3
++ echo Running Safety check...
+Running Safety check...
++ safety check --json
++ true
++ echo Running Bandit security scan...
+Running Bandit security scan...
++ bandit -r app.py -f json -o bandit-report.json
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[json]	INFO	JSON output written to file: bandit-report.json
++ true
++ echo Security scans completed!
+Security scans completed!
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Artifact)
+[Pipeline] echo
+Creating deployment artifact...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ tar -czf flask-app-11.tar.gz --exclude=venv --exclude=*.pyc --exclude=__pycache__ app.py requirements.txt
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] archiveArtifacts
+Archiving artifacts
+Recording fingerprints
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Staging)
+[Pipeline] echo
+Deploying to staging environment...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sshagent
+[ssh-agent] Using credentials ****
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-XXXXXXWjDRQL/agent.5888
+SSH_AGENT_PID=5891
+Running ssh-add (command line suppressed)
+Identity added: /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging@tmp/private_key_17421059893353317528.key (/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_staging@tmp/private_key_17421059893353317528.key)
+[ssh-agent] Started.
+[Pipeline] {
+[Pipeline] sh
++ echo Deploying to staging server: ****
+Deploying to staging server: ****
++ echo Copying files to staging server...
+Copying files to staging server...
++ scp -o StrictHostKeyChecking=no flask-app-11.tar.gz ****@****:/var/www/flask-app
++ echo Extracting and installing on staging server...
+Extracting and installing on staging server...
++ ssh -o StrictHostKeyChecking=no ****@**** cd /var/www/flask-app && tar -xzf flask-app-11.tar.gz
++ ssh -o StrictHostKeyChecking=no ****@**** cd /var/www/flask-app && python3 -m venv venv && venv/bin/pip install -r requirements.txt
+Requirement already satisfied: Flask==3.0.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 2)) (3.0.0)
+Requirement already satisfied: Werkzeug==3.0.1 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 3)) (3.0.1)
+Requirement already satisfied: pytest==7.4.3 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 6)) (7.4.3)
+Requirement already satisfied: pytest-cov==4.1.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 7)) (4.1.0)
+Requirement already satisfied: gunicorn==21.2.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 10)) (21.2.0)
+Requirement already satisfied: flake8==6.1.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 13)) (6.1.0)
+Requirement already satisfied: black==23.12.1 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 14)) (23.12.1)
+Requirement already satisfied: python-dotenv==1.0.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 17)) (1.0.0)
+Requirement already satisfied: Jinja2>=3.1.2 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (3.1.6)
+Requirement already satisfied: itsdangerous>=2.1.2 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (2.2.0)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (8.3.1)
+Requirement already satisfied: blinker>=1.6.2 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (1.9.0)
+Requirement already satisfied: MarkupSafe>=2.1.1 in ./venv/lib/python3.12/site-packages (from Werkzeug==3.0.1->-r requirements.txt (line 3)) (3.0.3)
+Requirement already satisfied: iniconfig in ./venv/lib/python3.12/site-packages (from pytest==7.4.3->-r requirements.txt (line 6)) (2.3.0)
+Requirement already satisfied: packaging in ./venv/lib/python3.12/site-packages (from pytest==7.4.3->-r requirements.txt (line 6)) (25.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in ./venv/lib/python3.12/site-packages (from pytest==7.4.3->-r requirements.txt (line 6)) (1.6.0)
+Requirement already satisfied: coverage>=5.2.1 in ./venv/lib/python3.12/site-packages (from coverage[toml]>=5.2.1->pytest-cov==4.1.0->-r requirements.txt (line 7)) (7.13.1)
+Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in ./venv/lib/python3.12/site-packages (from flake8==6.1.0->-r requirements.txt (line 13)) (0.7.0)
+Requirement already satisfied: pycodestyle<2.12.0,>=2.11.0 in ./venv/lib/python3.12/site-packages (from flake8==6.1.0->-r requirements.txt (line 13)) (2.11.1)
+Requirement already satisfied: pyflakes<3.2.0,>=3.1.0 in ./venv/lib/python3.12/site-packages (from flake8==6.1.0->-r requirements.txt (line 13)) (3.1.0)
+Requirement already satisfied: mypy-extensions>=0.4.3 in ./venv/lib/python3.12/site-packages (from black==23.12.1->-r requirements.txt (line 14)) (1.1.0)
+Requirement already satisfied: pathspec>=0.9.0 in ./venv/lib/python3.12/site-packages (from black==23.12.1->-r requirements.txt (line 14)) (1.0.3)
+Requirement already satisfied: platformdirs>=2 in ./venv/lib/python3.12/site-packages (from black==23.12.1->-r requirements.txt (line 14)) (4.5.1)
++ echo Restarting Flask service on staging...
+Restarting Flask service on staging...
++ ssh -o StrictHostKeyChecking=no ****@**** sudo systemctl restart flask-app
+Warning: The unit file, source configuration file or drop-ins of flask-app.service changed on disk. Run 'systemctl daemon-reload' to reload units.
++ echo Deployment to staging completed successfully!
+Deployment to staging completed successfully!
+[Pipeline] }
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 5891 killed;
+[ssh-agent] Stopped.
+[Pipeline] // sshagent
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Production)
+Stage "Deploy to Production" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Smoke Test - Staging)
+[Pipeline] echo
+Running smoke tests on staging...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ echo Waiting for service to start...
+Waiting for service to start...
++ sleep 5
++ echo Testing health endpoint...
+Testing health endpoint...
++ curl -f http://****/api/health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100    69  100    69    0     0    101      0 --:--:-- --:--:-- --:--:--   101
+{"message":"Application is running successfully","status":"healthy"}
++ echo Testing info endpoint...
+Testing info endpoint...
++ curl -f http://****/api/info
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   165  100   165    0     0    280      0 --:--:-- --:--:-- --:--:--   280
+{"description":"A simple Flask application demonstrating CI/CD with Jenkins and GitHub Actions","environment":"staging","name":"Flask CI/CD Demo","version":"1.0.0"}
++ echo All smoke tests passed!
+All smoke tests passed!
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Health Check - Production)
+Stage "Health Check - Production" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+Cleaning up workspace...
+[Pipeline] cleanWs
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
+[Pipeline] echo
+Pipeline executed successfully!
+[Pipeline] emailext
+Sending email to: ghanshyamjobi+jenkins@gmail.com
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+
 ```
 
-#### GitHub Webhook (Real-time):
-1. **GitHub Repository** → Settings → Webhooks
-2. Add webhook:
-   - Payload URL: `http://your-jenkins:8080/github-webhook/`
-   - Content type: `application/json`
-   - Events: "Just the push event"
-   - Active: ✓
-3. **Save**
+### Stage 3. CI/CD logs for Production tag push
 
-Now pushes trigger Jenkins immediately!
+```
+Started by user admin
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/caches/git-640a1658cad41f253def4865ccabb7b3/.git # timeout=10
+Setting origin to https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git config remote.origin.url https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git # timeout=10
+Fetching origin...
+Fetching upstream changes from origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git config --get remote.origin.url # timeout=10
+ > git fetch --tags --force --progress -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/tags/v1.3.0^{commit} # timeout=10
+Obtained Jenkinsfile from ef95c8ea7a2af9b1d16bcabe17e78bf7e3c648e8
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning with configured refspecs honoured and with tags
+Cloning repository https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git init /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0 # timeout=10
+Fetching upstream changes from https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+Checking out Revision ef95c8ea7a2af9b1d16bcabe17e78bf7e3c648e8 (v1.3.0)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ef95c8ea7a2af9b1d16bcabe17e78bf7e3c648e8 # timeout=10
+Commit message: "Merge pull request #7 from ghanshyamca/staging"
+ > git rev-list --no-walk ef95c8ea7a2af9b1d16bcabe17e78bf7e3c648e8 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withCredentials
+Masking supported pattern matches of $PRODUCTION_HOST or $PRODUCTION_USER or $STAGING_USER or $STAGING_HOST
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] echo
+Checking out source code...
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git # timeout=10
+Fetching with tags
+Fetching upstream changes from https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/ghanshyamca/jenkins_pipeline_and_github_action.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision ef95c8ea7a2af9b1d16bcabe17e78bf7e3c648e8 (v1.3.0)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ef95c8ea7a2af9b1d16bcabe17e78bf7e3c648e8 # timeout=10
+Commit message: "Merge pull request #7 from ghanshyamca/staging"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Setup Environment)
+[Pipeline] echo
+Setting up Python virtual environment...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ python3 -m venv venv
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.10/site-packages (22.0.2)
+Collecting pip
+  Using cached pip-25.3-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.2
+    Uninstalling pip-22.0.2:
+      Successfully uninstalled pip-22.0.2
+Successfully installed pip-25.3
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] echo
+Installing dependencies...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install -r requirements.txt
+Collecting Flask==3.0.0 (from -r requirements.txt (line 2))
+  Using cached flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting Werkzeug==3.0.1 (from -r requirements.txt (line 3))
+  Using cached werkzeug-3.0.1-py3-none-any.whl.metadata (4.1 kB)
+Collecting pytest==7.4.3 (from -r requirements.txt (line 6))
+  Using cached pytest-7.4.3-py3-none-any.whl.metadata (7.9 kB)
+Collecting pytest-cov==4.1.0 (from -r requirements.txt (line 7))
+  Using cached pytest_cov-4.1.0-py3-none-any.whl.metadata (26 kB)
+Collecting gunicorn==21.2.0 (from -r requirements.txt (line 10))
+  Using cached gunicorn-21.2.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting flake8==6.1.0 (from -r requirements.txt (line 13))
+  Using cached flake8-6.1.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting black==23.12.1 (from -r requirements.txt (line 14))
+  Using cached black-23.12.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (68 kB)
+Collecting python-dotenv==1.0.0 (from -r requirements.txt (line 17))
+  Using cached python_dotenv-1.0.0-py3-none-any.whl.metadata (21 kB)
+Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 2))
+  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.1.1 (from Werkzeug==3.0.1->-r requirements.txt (line 3))
+  Using cached markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting iniconfig (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting packaging (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pluggy<2.0,>=0.12 (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting exceptiongroup>=1.0.0rc8 (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+Collecting tomli>=1.0.0 (from pytest==7.4.3->-r requirements.txt (line 6))
+  Using cached tomli-2.4.0-py3-none-any.whl.metadata (10 kB)
+Collecting coverage>=5.2.1 (from coverage[toml]>=5.2.1->pytest-cov==4.1.0->-r requirements.txt (line 7))
+  Using cached coverage-7.13.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.5 kB)
+Collecting mccabe<0.8.0,>=0.7.0 (from flake8==6.1.0->-r requirements.txt (line 13))
+  Using cached mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Collecting pycodestyle<2.12.0,>=2.11.0 (from flake8==6.1.0->-r requirements.txt (line 13))
+  Using cached pycodestyle-2.11.1-py2.py3-none-any.whl.metadata (4.5 kB)
+Collecting pyflakes<3.2.0,>=3.1.0 (from flake8==6.1.0->-r requirements.txt (line 13))
+  Using cached pyflakes-3.1.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting mypy-extensions>=0.4.3 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting pathspec>=0.9.0 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached pathspec-1.0.3-py3-none-any.whl.metadata (13 kB)
+Collecting platformdirs>=2 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached platformdirs-4.5.1-py3-none-any.whl.metadata (12 kB)
+Collecting typing-extensions>=4.0.1 (from black==23.12.1->-r requirements.txt (line 14))
+  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Using cached flask-3.0.0-py3-none-any.whl (99 kB)
+Using cached werkzeug-3.0.1-py3-none-any.whl (226 kB)
+Using cached pytest-7.4.3-py3-none-any.whl (325 kB)
+Using cached pytest_cov-4.1.0-py3-none-any.whl (21 kB)
+Using cached gunicorn-21.2.0-py3-none-any.whl (80 kB)
+Using cached flake8-6.1.0-py2.py3-none-any.whl (58 kB)
+Using cached black-23.12.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+Using cached python_dotenv-1.0.0-py3-none-any.whl (19 kB)
+Using cached mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+Using cached pycodestyle-2.11.1-py2.py3-none-any.whl (31 kB)
+Using cached pyflakes-3.1.0-py2.py3-none-any.whl (62 kB)
+Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Using cached click-8.3.1-py3-none-any.whl (108 kB)
+Using cached coverage-7.13.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (247 kB)
+Using cached exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+Using cached mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached pathspec-1.0.3-py3-none-any.whl (55 kB)
+Using cached platformdirs-4.5.1-py3-none-any.whl (18 kB)
+Using cached tomli-2.4.0-py3-none-any.whl (14 kB)
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Using cached iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Installing collected packages: typing-extensions, tomli, python-dotenv, pyflakes, pycodestyle, pluggy, platformdirs, pathspec, packaging, mypy-extensions, mccabe, MarkupSafe, itsdangerous, iniconfig, coverage, click, blinker, Werkzeug, Jinja2, gunicorn, flake8, exceptiongroup, black, pytest, Flask, pytest-cov
 
----
+Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.0.1 black-23.12.1 blinker-1.9.0 click-8.3.1 coverage-7.13.1 exceptiongroup-1.3.1 flake8-6.1.0 gunicorn-21.2.0 iniconfig-2.3.0 itsdangerous-2.2.0 mccabe-0.7.0 mypy-extensions-1.1.0 packaging-25.0 pathspec-1.0.3 platformdirs-4.5.1 pluggy-1.6.0 pycodestyle-2.11.1 pyflakes-3.1.0 pytest-7.4.3 pytest-cov-4.1.0 python-dotenv-1.0.0 tomli-2.4.0 typing-extensions-4.15.0
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Code Quality Check)
+[Pipeline] echo
+Running code quality checks...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ flake8 app.py --max-line-length=120 --exclude=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] echo
+Running unit tests...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pytest test_app.py -v --junitxml=test-results.xml --cov=app --cov-report=xml --cov-report=html
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.3, pluggy-1.6.0 -- /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0
+plugins: cov-4.1.0
+collecting ... collected 11 items
 
-## 📧 Email Notifications
+test_app.py::test_home_page PASSED                                       [  9%]
+test_app.py::test_health_check PASSED                                    [ 18%]
+test_app.py::test_info_endpoint PASSED                                   [ 27%]
+test_app.py::test_add_numbers_positive PASSED                            [ 36%]
+test_app.py::test_add_numbers_negative PASSED                            [ 45%]
+test_app.py::test_add_numbers_zero PASSED                                [ 54%]
+test_app.py::test_add_numbers_large PASSED                               [ 63%]
+test_app.py::test_invalid_endpoint PASSED                                [ 72%]
+test_app.py::test_add_non_integer PASSED                                 [ 81%]
+test_app.py::test_health_check_returns_json PASSED                       [ 90%]
+test_app.py::test_info_returns_json PASSED                               [100%]
 
-### Success Email
+- generated xml file: /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/test-results.xml -
 
-```html
-Subject: SUCCESS: Job 'Flask-CI-CD-Pipeline [12]'
+---------- coverage: platform linux, python 3.10.12-final-0 ----------
+Coverage HTML written to dir htmlcov
+Coverage XML written to file coverage.xml
 
-SUCCESSFUL: Job 'Flask-CI-CD-Pipeline [12]':
-Check console output at "Flask-CI-CD-Pipeline [12]"
+============================== 11 passed in 1.14s ==============================
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] junit
+Recording test results
+[Checks API] No suitable checks publisher found.
+[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at BUILD level /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/htmlcov to Coverage_20Report
+[htmlpublisher] Copying recursive using current thread
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Security Scan)
+[Pipeline] echo
+Running security vulnerability scan...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ PATH=/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install safety bandit
+Collecting safety
+  Using cached safety-3.7.0-py3-none-any.whl.metadata (11 kB)
+Collecting bandit
+  Using cached bandit-1.9.3-py3-none-any.whl.metadata (7.1 kB)
+Collecting authlib>=1.2.0 (from safety)
+  Using cached authlib-1.6.6-py2.py3-none-any.whl.metadata (9.8 kB)
+Requirement already satisfied: click>=8.0.2 in ./venv/lib/python3.10/site-packages (from safety) (8.3.1)
+Collecting dparse>=0.6.4 (from safety)
+  Using cached dparse-0.6.4-py3-none-any.whl.metadata (5.5 kB)
+Collecting filelock<4.0,>=3.16.1 (from safety)
+  Using cached filelock-3.20.3-py3-none-any.whl.metadata (2.1 kB)
+Collecting httpx (from safety)
+  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Requirement already satisfied: jinja2>=3.1.0 in ./venv/lib/python3.10/site-packages (from safety) (3.1.6)
+Collecting marshmallow>=3.15.0 (from safety)
+  Using cached marshmallow-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting nltk>=3.9 (from safety)
+  Using cached nltk-3.9.2-py3-none-any.whl.metadata (3.2 kB)
+Requirement already satisfied: packaging>=21.0 in ./venv/lib/python3.10/site-packages (from safety) (25.0)
+Collecting pydantic>=2.6.0 (from safety)
+  Using cached pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
+Collecting requests (from safety)
+  Using cached requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting ruamel-yaml>=0.17.21 (from safety)
+  Using cached ruamel_yaml-0.19.1-py3-none-any.whl.metadata (16 kB)
+Collecting safety-schemas==0.0.16 (from safety)
+  Using cached safety_schemas-0.0.16-py3-none-any.whl.metadata (1.1 kB)
+Collecting tenacity>=8.1.0 (from safety)
+  Using cached tenacity-9.1.2-py3-none-any.whl.metadata (1.2 kB)
+Requirement already satisfied: tomli in ./venv/lib/python3.10/site-packages (from safety) (2.4.0)
+Collecting tomlkit (from safety)
+  Using cached tomlkit-0.14.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting typer>=0.16.0 (from safety)
+  Using cached typer-0.21.1-py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: typing-extensions>=4.7.1 in ./venv/lib/python3.10/site-packages (from safety) (4.15.0)
+Collecting PyYAML>=5.3.1 (from bandit)
+  Using cached pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting stevedore>=1.20.0 (from bandit)
+  Using cached stevedore-5.6.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting rich (from bandit)
+  Using cached rich-14.2.0-py3-none-any.whl.metadata (18 kB)
+Collecting cryptography (from authlib>=1.2.0->safety)
+  Using cached cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.10/site-packages (from jinja2>=3.1.0->safety) (3.0.3)
+Collecting backports-datetime-fromisoformat (from marshmallow>=3.15.0->safety)
+  Using cached backports_datetime_fromisoformat-2.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.3 kB)
+Collecting joblib (from nltk>=3.9->safety)
+  Using cached joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting regex>=2021.8.3 (from nltk>=3.9->safety)
+  Using cached regex-2026.1.15-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting tqdm (from nltk>=3.9->safety)
+  Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.6.0->safety)
+  Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.41.5 (from pydantic>=2.6.0->safety)
+  Using cached pydantic_core-2.41.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic>=2.6.0->safety)
+  Using cached typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting shellingham>=1.3.0 (from typer>=0.16.0->safety)
+  Using cached shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting markdown-it-py>=2.2.0 (from rich->bandit)
+  Using cached markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich->bandit)
+  Using cached pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->bandit)
+  Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting cffi>=2.0.0 (from cryptography->authlib>=1.2.0->safety)
+  Using cached cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography->authlib>=1.2.0->safety)
+  Using cached pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+Collecting anyio (from httpx->safety)
+  Using cached anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
+Collecting certifi (from httpx->safety)
+  Using cached certifi-2026.1.4-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx->safety)
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx->safety)
+  Using cached idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx->safety)
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Requirement already satisfied: exceptiongroup>=1.0.2 in ./venv/lib/python3.10/site-packages (from anyio->httpx->safety) (1.3.1)
+Collecting charset_normalizer<4,>=2 (from requests->safety)
+  Using cached charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (37 kB)
+Collecting urllib3<3,>=1.21.1 (from requests->safety)
+  Using cached urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Using cached safety-3.7.0-py3-none-any.whl (312 kB)
+Using cached safety_schemas-0.0.16-py3-none-any.whl (39 kB)
+Using cached filelock-3.20.3-py3-none-any.whl (16 kB)
+Using cached bandit-1.9.3-py3-none-any.whl (134 kB)
+Using cached authlib-1.6.6-py2.py3-none-any.whl (244 kB)
+Using cached dparse-0.6.4-py3-none-any.whl (11 kB)
+Using cached marshmallow-4.2.0-py3-none-any.whl (48 kB)
+Using cached nltk-3.9.2-py3-none-any.whl (1.5 MB)
+Using cached pydantic-2.12.5-py3-none-any.whl (463 kB)
+Using cached pydantic_core-2.41.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Using cached pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (770 kB)
+Using cached regex-2026.1.15-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (791 kB)
+Using cached ruamel_yaml-0.19.1-py3-none-any.whl (118 kB)
+Using cached stevedore-5.6.0-py3-none-any.whl (54 kB)
+Using cached tenacity-9.1.2-py3-none-any.whl (28 kB)
+Using cached typer-0.21.1-py3-none-any.whl (47 kB)
+Using cached rich-14.2.0-py3-none-any.whl (243 kB)
+Using cached pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Using cached markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Using cached shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Using cached typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Using cached backports_datetime_fromisoformat-2.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (52 kB)
+Using cached cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Using cached cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (216 kB)
+Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached anyio-4.12.1-py3-none-any.whl (113 kB)
+Using cached idna-3.11-py3-none-any.whl (71 kB)
+Using cached certifi-2026.1.4-py3-none-any.whl (152 kB)
+Using cached joblib-1.5.3-py3-none-any.whl (309 kB)
+Using cached pycparser-2.23-py3-none-any.whl (118 kB)
+Using cached requests-2.32.5-py3-none-any.whl (64 kB)
+Using cached charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+Using cached urllib3-2.6.3-py3-none-any.whl (131 kB)
+Using cached tomlkit-0.14.0-py3-none-any.whl (39 kB)
+Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+Installing collected packages: urllib3, typing-inspection, tqdm, tomlkit, tenacity, stevedore, shellingham, ruamel-yaml, regex, PyYAML, pygments, pydantic-core, pycparser, mdurl, joblib, idna, h11, filelock, dparse, charset_normalizer, certifi, backports-datetime-fromisoformat, annotated-types, requests, pydantic, nltk, marshmallow, markdown-it-py, httpcore, cffi, anyio, safety-schemas, rich, httpx, cryptography, typer, bandit, authlib, safety
 
-Build Details:
-• Build Number: 12
-• Build Status: SUCCESS
-• Branch: staging
-• Build URL: http://jenkins:8080/job/Flask-CI-CD-Pipeline/12/
+Successfully installed PyYAML-6.0.3 annotated-types-0.7.0 anyio-4.12.1 authlib-1.6.6 backports-datetime-fromisoformat-2.0.3 bandit-1.9.3 certifi-2026.1.4 cffi-2.0.0 charset_normalizer-3.4.4 cryptography-46.0.3 dparse-0.6.4 filelock-3.20.3 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.11 joblib-1.5.3 markdown-it-py-4.0.0 marshmallow-4.2.0 mdurl-0.1.2 nltk-3.9.2 pycparser-2.23 pydantic-2.12.5 pydantic-core-2.41.5 pygments-2.19.2 regex-2026.1.15 requests-2.32.5 rich-14.2.0 ruamel-yaml-0.19.1 safety-3.7.0 safety-schemas-0.0.16 shellingham-1.5.4 stevedore-5.6.0 tenacity-9.1.2 tomlkit-0.14.0 tqdm-4.67.1 typer-0.21.1 typing-inspection-0.4.2 urllib3-2.6.3
++ echo Running Safety check...
+Running Safety check...
++ safety check --json
++ true
++ echo Running Bandit security scan...
+Running Bandit security scan...
++ bandit -r app.py -f json -o bandit-report.json
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[json]	INFO	JSON output written to file: bandit-report.json
++ true
++ echo Security scans completed!
+Security scans completed!
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Artifact)
+[Pipeline] echo
+Creating deployment artifact...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ tar -czf flask-app-2.tar.gz --exclude=venv --exclude=*.pyc --exclude=__pycache__ app.py requirements.txt
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] archiveArtifacts
+Archiving artifacts
+Recording fingerprints
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Staging)
+Stage "Deploy to Staging" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Production)
+[Pipeline] echo
+Deploying to production environment...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sshagent
+[ssh-agent] Using credentials ****
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-XXXXXXJVXSKa/agent.10942
+SSH_AGENT_PID=10945
+Running ssh-add (command line suppressed)
+Identity added: /var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0@tmp/private_key_5946313140748503531.key (/var/lib/jenkins/workspace/Flask-CI-CD-Multibranch_v1.3.0@tmp/private_key_5946313140748503531.key)
+[ssh-agent] Started.
+[Pipeline] {
+[Pipeline] sh
++ echo Deploying to production server: ****
+Deploying to production server: ****
++ echo Copying files to production server...
+Copying files to production server...
++ scp -o StrictHostKeyChecking=no flask-app-2.tar.gz ****@****:/var/www/flask-app
+Warning: Permanently added **** (ED25519) to the list of known hosts.
++ echo Extracting and installing on production server...
+Extracting and installing on production server...
++ ssh -o StrictHostKeyChecking=no ****@**** cd /var/www/flask-app && tar -xzf flask-app-2.tar.gz
++ ssh -o StrictHostKeyChecking=no ****@**** cd /var/www/flask-app && python3 -m venv venv && venv/bin/pip install -r requirements.txt
+Requirement already satisfied: Flask==3.0.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 2)) (3.0.0)
+Requirement already satisfied: Werkzeug==3.0.1 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 3)) (3.0.1)
+Requirement already satisfied: pytest==7.4.3 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 6)) (7.4.3)
+Requirement already satisfied: pytest-cov==4.1.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 7)) (4.1.0)
+Requirement already satisfied: gunicorn==21.2.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 10)) (21.2.0)
+Requirement already satisfied: flake8==6.1.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 13)) (6.1.0)
+Requirement already satisfied: black==23.12.1 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 14)) (23.12.1)
+Requirement already satisfied: python-dotenv==1.0.0 in ./venv/lib/python3.12/site-packages (from -r requirements.txt (line 17)) (1.0.0)
+Requirement already satisfied: Jinja2>=3.1.2 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (3.1.6)
+Requirement already satisfied: itsdangerous>=2.1.2 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (2.2.0)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (8.3.1)
+Requirement already satisfied: blinker>=1.6.2 in ./venv/lib/python3.12/site-packages (from Flask==3.0.0->-r requirements.txt (line 2)) (1.9.0)
+Requirement already satisfied: MarkupSafe>=2.1.1 in ./venv/lib/python3.12/site-packages (from Werkzeug==3.0.1->-r requirements.txt (line 3)) (3.0.3)
+Requirement already satisfied: iniconfig in ./venv/lib/python3.12/site-packages (from pytest==7.4.3->-r requirements.txt (line 6)) (2.3.0)
+Requirement already satisfied: packaging in ./venv/lib/python3.12/site-packages (from pytest==7.4.3->-r requirements.txt (line 6)) (25.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in ./venv/lib/python3.12/site-packages (from pytest==7.4.3->-r requirements.txt (line 6)) (1.6.0)
+Requirement already satisfied: coverage>=5.2.1 in ./venv/lib/python3.12/site-packages (from coverage[toml]>=5.2.1->pytest-cov==4.1.0->-r requirements.txt (line 7)) (7.13.1)
+Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in ./venv/lib/python3.12/site-packages (from flake8==6.1.0->-r requirements.txt (line 13)) (0.7.0)
+Requirement already satisfied: pycodestyle<2.12.0,>=2.11.0 in ./venv/lib/python3.12/site-packages (from flake8==6.1.0->-r requirements.txt (line 13)) (2.11.1)
+Requirement already satisfied: pyflakes<3.2.0,>=3.1.0 in ./venv/lib/python3.12/site-packages (from flake8==6.1.0->-r requirements.txt (line 13)) (3.1.0)
+Requirement already satisfied: mypy-extensions>=0.4.3 in ./venv/lib/python3.12/site-packages (from black==23.12.1->-r requirements.txt (line 14)) (1.1.0)
+Requirement already satisfied: pathspec>=0.9.0 in ./venv/lib/python3.12/site-packages (from black==23.12.1->-r requirements.txt (line 14)) (1.0.3)
+Requirement already satisfied: platformdirs>=2 in ./venv/lib/python3.12/site-packages (from black==23.12.1->-r requirements.txt (line 14)) (4.5.1)
++ echo Restarting Flask service on production...
+Restarting Flask service on production...
++ ssh -o StrictHostKeyChecking=no ****@**** sudo systemctl restart flask-app
++ echo Deployment to production completed successfully!
+Deployment to production completed successfully!
+[Pipeline] }
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 10945 killed;
+[ssh-agent] Stopped.
+[Pipeline] // sshagent
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Smoke Test - Staging)
+Stage "Smoke Test - Staging" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Health Check - Production)
+[Pipeline] echo
+Running health checks on production...
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ echo Waiting for service to start...
+Waiting for service to start...
++ sleep 5
++ echo Testing health endpoint...
+Testing health endpoint...
++ curl -f http://****/api/health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100    69  100    69    0     0     43      0  0:00:01  0:00:01 --:--:--    44
+{"message":"Application is running successfully","status":"healthy"}
++ echo Testing info endpoint...
+Testing info endpoint...
++ curl -f http://****/api/info
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   168  100   168    0     0    269      0 --:--:-- --:--:-- --:--:--   269
+{"description":"A simple Flask application demonstrating CI/CD with Jenkins and GitHub Actions","environment":"production","name":"Flask CI/CD Demo","version":"1.0.0"}
++ echo All health checks passed!
+All health checks passed!
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+Cleaning up workspace...
+[Pipeline] cleanWs
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
+[Pipeline] echo
+Pipeline executed successfully!
+[Pipeline] emailext
+Sending email to: ghanshyamjobi+jenkins@gmail.com
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+
 ```
 
-### Failure Email
+### Stage 4. Email received for Staging
 
-```html
-Subject: FAILED: Job 'Flask-CI-CD-Pipeline [13]'
+<img width="1203" height="442" alt="image" src="https://github.com/user-attachments/assets/64a8173d-429a-4c0c-9bf6-4432135c0f7e" />
 
-FAILED: Job 'Flask-CI-CD-Pipeline [13]':
-Check console output at "Flask-CI-CD-Pipeline [13]"
 
-Build Details:
-• Build Number: 13
-• Build Status: FAILURE
-• Branch: main
-• Build URL: http://jenkins:8080/job/Flask-CI-CD-Pipeline/13/
+### Stage 5. Email received for Production tag version
 
-Please check the build logs for more details.
-```
+<img width="1049" height="446" alt="image" src="https://github.com/user-attachments/assets/a02e4ea3-4752-4626-93e4-1bcb90801718" />
 
-### Configure Recipients
+## EC2 instances of Staging
+<img width="1920" height="869" alt="image" src="https://github.com/user-attachments/assets/53a6804b-cb42-4652-997d-e86bf57aefb0" />
 
-Edit `Jenkinsfile`:
+## EC2 instances of production
 
-```groovy
-environment {
-    EMAIL_RECIPIENTS = 'team@example.com,dev@example.com'  // Multiple recipients
-}
-```
-
----
-
-## 🔍 Troubleshooting
-
-### ❌ Pipeline Fails at Setup Environment
-
-**Error**: `python3: command not found`
-
-**Solution**:
-```bash
-# On Jenkins server
-sudo apt install -y python3 python3-venv python3-pip
-
-# Verify
-python3 --version
-```
-
-### ❌ Tests Fail
-
-**Error**: `ModuleNotFoundError: No module named 'pytest'`
-
-**Solution**:
-- Ensure `requirements.txt` includes pytest
-- Check virtual environment is activated
-- Verify Build stage completed successfully
-
-### ❌ SSH Deployment Fails
-
-**Error**: `Permission denied (publickey)`
-
-**Solution**:
-1. Verify SSH key added to Jenkins credentials
-2. Verify public key added to server's `~/.ssh/authorized_keys`
-3. Test SSH connection manually from Jenkins server
-4. Check credential ID matches Jenkinsfile
-
-### ❌ Email Not Sent
-
-**Error**: No email received
-
-**Solution**:
-1. **Manage Jenkins** → **Configure System** → **Extended E-mail Notification**
-2. Verify SMTP settings
-3. Test configuration
-4. Check spam folder
-5. For Gmail, use App Password not account password
-
-### ❌ Coverage Report Not Published
-
-**Error**: `ERROR: Specified HTML directory does not exist`
-
-**Solution**:
-- Ensure pytest runs with `--cov-report=html`
-- Verify `htmlcov/` directory created
-- Check workspace for coverage files
-
-### ❌ Service Restart Fails on Server
-
-**Error**: `Failed to restart flask-app.service`
-
-**SSH to server and check:**
-```bash
-# Check service status
-sudo systemctl status flask-app
-
-# Check logs
-sudo journalctl -u flask-app -n 50
-
-# Verify service file exists
-ls -la /etc/systemd/system/flask-app.service
-
-# Test manual restart
-sudo systemctl restart flask-app
-```
-
----
-
-## 📊 Comparison with GitHub Actions
-
-| Feature | Jenkins | GitHub Actions |
-|---------|---------|----------------|
-| **Hosting** | Self-hosted | Cloud-hosted |
-| **Cost** | Free (self-hosted) | Free tier: 2000 min/month |
-| **Setup Complexity** | Higher (install, configure) | Lower (ready to use) |
-| **Customization** | Very high | Moderate |
-| **Deployment** | SSH to servers | SSH to servers |
-| **Plugins** | 1800+ plugins | GitHub Marketplace |
-| **Build Time** | 8-12 minutes | 5-10 minutes |
-| **Artifact Storage** | On Jenkins server | GitHub (limited) |
-| **Email Notifications** | Built-in | Third-party action |
-| **UI/UX** | Classic Jenkins UI | Modern GitHub UI |
-| **Integration** | Any Git provider | GitHub only |
-| **Best For** | Enterprise, on-prem | GitHub projects, startups |
-
-**Both workflows in this project achieve the same goals with different approaches!**
-
----
-
-## 📚 Additional Resources
-
-### Documentation
-- [Jenkins Documentation](https://www.jenkins.io/doc/)
-- [Pipeline Syntax](https://www.jenkins.io/doc/book/pipeline/syntax/)
-- [Jenkins Plugins](https://plugins.jenkins.io/)
-- [AWS EC2 Setup Guide](docs/AWS_EC2_SETUP.md)
-- [Email Notification Setup](docs/EMAIL_NOTIFICATION_SETUP.md)
-
-### Related Files
-- [Jenkinsfile](Jenkinsfile) - Pipeline definition
-- [GitHub Actions Workflow](.github/workflows/ci-cd.yml)
-- [Flask Application](app.py)
-- [Tests](test_app.py)
-
-### Jenkins Training
-- [Jenkins Getting Started](https://www.jenkins.io/doc/pipeline/tour/getting-started/)
-- [Pipeline Tutorial](https://www.jenkins.io/doc/book/pipeline/getting-started/)
-- [Best Practices](https://www.jenkins.io/doc/book/pipeline/pipeline-best-practices/)
-
----
-
-## ✅ Quick Reference
-
-### Common Commands
-
-```bash
-# On Jenkins server - check Python
-python3 --version
-pip3 --version
-
-# View Jenkins logs
-sudo journalctl -u jenkins -f
-
-# Restart Jenkins
-sudo systemctl restart jenkins
-
-# Check Jenkins status
-sudo systemctl status jenkins
-
-# Access Jenkins config
-sudo nano /etc/default/jenkins
-```
-
-### Pipeline Triggers
-
-```bash
-# Trigger staging deployment
-git checkout staging
-git merge main
-git push origin staging
-
-# Trigger production deployment
-git tag -a v1.0.0 -m "Release v1.0.0"
-git push origin v1.0.0
-
-# View all tags
-git tag -l
-```
-
-### Useful Jenkins URLs
-
-- **Dashboard**: `http://jenkins:8080/`
-- **Manage Jenkins**: `http://jenkins:8080/manage`
-- **Plugin Manager**: `http://jenkins:8080/pluginManager/`
-- **Credentials**: `http://jenkins:8080/credentials/`
-- **System Log**: `http://jenkins:8080/log/all`
-
-### Build Badge
-
-Add to README.md:
-
-```markdown
-[![Build Status](http://jenkins:8080/buildStatus/icon?job=Flask-CI-CD-Pipeline)](http://jenkins:8080/job/Flask-CI-CD-Pipeline/)
-```
-
----
-
-## 🎯 Best Practices
-
-### 1. Security
-- ✅ Store credentials in Jenkins Credentials Manager
-- ✅ Use separate SSH keys for staging and production
-- ✅ Rotate credentials every 90 days
-- ✅ Limit Jenkins user permissions
-- ✅ Enable HTTPS for Jenkins UI
-
-### 2. Pipeline Optimization
-- ✅ Use workspace cleanup to save disk space
-- ✅ Cache dependencies when possible
-- ✅ Run tests in parallel (if multiple test files)
-- ✅ Fail fast on critical errors
-- ✅ Use stages for better visualization
-
-### 3. Deployment
-- ✅ Always run smoke tests after deployment
-- ✅ Keep previous artifacts for rollback
-- ✅ Use semantic versioning for production tags
-- ✅ Test on staging before production
-- ✅ Monitor logs after deployment
-
-### 4. Maintenance
-- ✅ Regular Jenkins plugin updates
-- ✅ Monitor disk space (artifacts can grow)
-- ✅ Review and clean old builds
-- ✅ Backup Jenkins home directory
-- ✅ Document custom configurations
-
----
-
-**🚀 Your Jenkins CI/CD pipeline is configured and ready!**
-
-Push to `staging` branch for staging deployment, or create a tag `v*.*.*` for production deployment. Jenkins will handle the rest! 🎉
+<img width="1920" height="869" alt="image" src="https://github.com/user-attachments/assets/0fccc4ca-25ac-4406-be36-456fb5271e89" />
